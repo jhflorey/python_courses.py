@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete {{id}}?</title>
+</head>
+<body>
+<h2>Delete {{id}}?</h2>
+<h4>Are you sure you want to delete the following course?</h4>
+<p>Name: {{course.name}}</p>
+<p>Description: {{course.description}}</p>
+<form class='form' action='/delete/{{id}}' method='post'>
+{% csrf_token %}
+<input type='hidden' name='course_id' value='{{id}}'>
+<button type='reset' name='No'>No</button>
+<button type='submit' name='Yes'>Yes! I want to delete this</button>
+</form>
+</body>
+</html>
